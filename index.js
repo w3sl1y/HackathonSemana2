@@ -72,3 +72,73 @@ function sumInput() {
   alert( sumInput() );
 
 //Ejercicio #4
+function filterRange(arr, a, b){
+    return arr.filter(item => (a <= item && item <= b));
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered );
+
+alert( arr );
+
+//Ejercicio #5
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = arr.slice();
+
+sorted.sort();
+
+console.log(sorted)
+
+//Ejercicio #6
+function Calculator() {
+
+    this.methods = {
+      "-": (a, b) => a - b,
+      "+": (a, b) => a + b
+    };
+  
+    this.calculate = function(str) {
+  
+      let split = str.split(' '),
+        a = +split[0],
+        op = split[1],
+        b = +split[2];
+  
+      if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+        return NaN;
+      }
+  
+      return this.methods[op](a, b);
+    };
+  
+    this.addMethod = function(name, func) {
+      this.methods[name] = func;
+    };
+  }
+
+  let powerCalc = new Calculator;
+  powerCalc.addMethod("*", (a, b) => a * b);
+  powerCalc.addMethod("/", (a, b) => a / b);
+  powerCalc.addMethod("**", (a, b) => a ** b);
+
+  //Ejercicio #8
+  let message;
+
+if (login == 'Empleado') {
+  message = 'Hola';
+} else if (login == 'Director') {
+  message = 'Felicidades';
+} else if (login == '') {
+  message = 'Sin sesión';
+} else {
+  message = '';
+}
+
+  let message = (login == 'Empleado') ? 'Hola' :
+  (login == 'Director') ? 'Saludos' :
+  (login == '') ? 'Sin inicio de sesión' :
+  '';
