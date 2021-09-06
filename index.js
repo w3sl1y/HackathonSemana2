@@ -85,13 +85,17 @@ alert( filtered );
 alert( arr );
 
 //Ejercicio #5
+function copySorted(arr) {
+  return arr.slice().sort();
+}
+
 let arr = ["HTML", "JavaScript", "CSS"];
 
-let sorted = arr.slice();
-
-sorted.sort();
+let sorted = copySorted(arr);
 
 console.log(sorted)
+
+console.log(arr)
 
 //Ejercicio #6
 function Calculator() {
